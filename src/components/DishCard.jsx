@@ -1,8 +1,14 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { Popup } from "./Popup";
 import { Rating } from "./Ratings";
+import { motion } from "framer-motion";
+
 const DishCard = ({ dish }) => {
   const { name, description, isVeg, rating, price, img_url, size, toppings } =
     dish;
+  const productEssentials = { name, isVeg, price };
+
+  const [showPopup, setShowPopup] = useState(false);
   return (
     <section className="w-1/2 p-2">
       <motion.div
@@ -33,7 +39,12 @@ const DishCard = ({ dish }) => {
         <p className="text-gray-600 p-2 text-sm md:h-12 h-24">{description}</p>
         <span className="flex justify-between p-2 items-center h-12">
           <p className="font-semibold text-sm text-gray-500">₹{price}</p>
-          <button className="flex gap-2 bg-[#F0F0F3] items-center border rounded-md text-sm p-1 font-bold text-gray-500 cursor-pointer shadow-md">
+          <button
+            className="flex gap-2 bg-[#F0F0F3] items-center border rounded-md text-sm p-1 font-bold text-gray-500 cursor-pointer shadow-md"
+            onClick={() => {
+              setShowPopup(true);
+            }}
+          >
             <p className="flex items-center justify-center w-6 h-6 rounded-full shadow-inner  text-[#3CBCB4] ">
               +
             </p>
@@ -41,6 +52,15 @@ const DishCard = ({ dish }) => {
           </button>
         </span>
       </motion.div>
+      {showPopup && (
+        <Popup
+          name={name}
+          size={size}
+          toppings={toppings}
+          togglePopup={setShowPopup}
+          productEssentials={productEssentials}
+        />
+      )}
     </section>
   );
 };
