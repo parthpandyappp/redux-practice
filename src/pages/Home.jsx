@@ -34,7 +34,7 @@ const Home = () => {
       />
       <section className="md:p-2 md:w-3/4 w-full mx-0 flex flex-wrap order-2">
         {products.map((product) => (
-          <DishCard dish={product} />
+          <DishCard key={product.key} dish={product} />
         ))}
       </section>
     </main>

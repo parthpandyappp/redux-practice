@@ -1,3 +1,4 @@
+export * from './CartItem';
 export * from './DishCard';
 export * from './FiltersAndSorts';
 export * from './Footer';
