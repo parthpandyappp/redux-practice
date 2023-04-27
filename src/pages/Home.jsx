@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../features";
+import { useDispatch, useSelector } from "react-redux";
 
 const Home = () => {
   const dispatch = useDispatch();
