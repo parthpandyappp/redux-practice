@@ -7,6 +7,7 @@ import {
   getSortedData,
   getVegOrNonVeg,
 } from "../helpers/sorting-filtering-helpers";
+import { TbLoader } from "react-icons/tb";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Home = () => {
   }, []);
 
   console.log("Product status: ", products, productsLoading);
-  return (
+  return !productsLoading ? (
     <main className="flex flex-col md:flex-row mt-24 h-full md:w-4/5 mx-auto mb-12">
       <FiltersAndSorts
         isVeg={isVeg}
@@ -37,64 +38,14 @@ const Home = () => {
         ))}
       </section>
     </main>
+  ) : (
+    <main className="flex justify-center items-center h-screen w-full">
+      <span className="flex gap-1 items-center">
+        <p className="text-xl font-semibold text-gray-500">Pizzas loading</p>
+        <TbLoader className="text-2xl text-gray-500 font-semibold" />
+      </span>
+    </main>
   );
 };
 
 export { Home };
-
-{
-  /* <span className="">
-          <p className="text-gray-500 font-bold">Sort by price</p>
-          <div>
-            <input
-              type="radio"
-              name="sort_by_price"
-              value="HIGH_TO_LOW"
-              onChange={(e) => setSortByPrice(e.target.value)}
-            />
-              <label for="html">HIGH TO LOW</label>
-          </div>
-           
-          <div>
-            <input
-              type="radio"
-              name="sort_by_price"
-              value="LOW_TO_HIGH"
-              onChange={(e) => setSortByPrice(e.target.value)}
-            />
-              <label for="css">LOW TO HIGH</label>{" "}
-          </div>
-        </span>
-        <span>
-          <p>SORT BY PRICE</p>
-          <input
-            type="radio"
-            name="sort_by_ratings"
-            value="4_above"
-            onChange={(e) => setSortByRatings(e.target.value)}
-          />
-            <label for="sort_by_ratings">4 stars & above</label>
-           
-          <input
-            type="radio"
-            name="sort_by_ratings"
-            value="3_above"
-            onChange={(e) => setSortByRatings(e.target.value)}
-          />
-            <label for="sort_by_ratings">3 stars & above</label>{" "}
-          <input
-            type="radio"
-            name="sort_by_ratings"
-            value="2_above"
-            onChange={(e) => setSortByRatings(e.target.value)}
-          />
-            <label for="sort_by_ratings">2 & above</label>{" "}
-          <input
-            type="radio"
-            name="sort_by_ratings"
-            value="1_above"
-            onChange={(e) => setSortByRatings(e.target.value)}
-          />
-            <label for="sort_by_ratings">1 & above</label>{" "}
-        </span> */
-}
