@@ -6,8 +6,19 @@ The project is a result of the frontend task assigned by the Treflo. It's a Reac
 2. Modular code, more components.
 3. Animations using `framer-motion`.
 4. Implementation of ***Barrels*** in ReactJs.
-5. Up to date ***version control*** with `git`
+5. Up to date ***version control*** with `git`, feature branches.
 6. Proper ***segregation*** of `components` and `pages` in the application.
+
+### Features
+1. Pizza listing, with proper denotaion of veg/non-veg sign with it.
+2. Sort by Price and Ratings.
+3. Filter by veg/non-veg dishes.
+4. Choose size and toppings for the pizza.
+5. increment (+) or decrement (-) the quantity of the item in cart.
+6. decrement the quantity to 0 for removing the item from cart.
+7. Review order in order to recheck the order with the given size and toppings.
+8. Place order to move items from cart to checkout.
+9. Amazing toast notifications for describing user actions.
 
 ### Tech stack
 1. ReactJs
