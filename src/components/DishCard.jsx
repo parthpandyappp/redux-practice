@@ -53,7 +53,9 @@ const DishCard = ({ dish }) => {
           </article>
           <Rating rating={rating} />
         </span>
-        <p className="text-gray-600 p-2 text-sm md:h-12 h-24">{description}</p>
+        <p className="text-gray-600 p-2 text-sm md:h-12 h-24 text-center md:text-left">
+          {description}
+        </p>
         <span className="flex justify-between p-2 items-center h-12">
           <p className="font-semibold text-sm text-gray-500">₹{price}</p>
           {alreadyAddedToCart(cart, dish) ? (
