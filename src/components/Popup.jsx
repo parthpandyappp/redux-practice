@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features";
+import { notifyAddToCart } from "../helpers";
 
 const Popup = ({ size, toppings, name, togglePopup, productEssentials }) => {
   const [pizzaSize, setPizzaSize] = useState("");
@@ -23,7 +24,6 @@ const Popup = ({ size, toppings, name, togglePopup, productEssentials }) => {
       setPizzaToppings(pizzaToppings.filter((item) => item !== itemName));
     }
   };
-
 
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen bg-gray-300 bg-opacity-50 backdrop-blur-sm">
@@ -83,6 +83,7 @@ const Popup = ({ size, toppings, name, togglePopup, productEssentials }) => {
             onClick={() => {
               dispatch(addToCart(dishForCart));
               togglePopup(false);
+              notifyAddToCart(name);
             }}
           >
             <p className="flex items-center justify-center w-6 h-6 rounded-full shadow-inner  text-[#3CBCB4] ">
