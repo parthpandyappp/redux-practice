@@ -33,11 +33,14 @@ const cartSlice = createSlice({
                     state.cart.splice(orderIndex, 1);
                 }
             }
+        },
+        placeOrder: (state) => {
+            state.cart = []
         }
     },
 
 })
 
-export const { addToCart, incrementOrderQty, decrementOrderQty } = cartSlice.actions
+export const { addToCart, incrementOrderQty, decrementOrderQty, placeOrder } = cartSlice.actions
 const cartReducer = cartSlice.reducer
 export { cartReducer }

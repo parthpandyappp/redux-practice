@@ -1,11 +1,17 @@
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { BsArrowRight } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { getNoOfItems, getTotalAmount } from "../helpers";
+import { useLocation } from "react-router-dom";
+import {
+  getNoOfItems,
+  getTotalAmount,
+  notifyOrderPlaced,
+  notifyToAddItemsInCart,
+} from "../helpers";
+import { placeOrder } from "../features";
 
 const Footer = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
 
   const noOfItems = getNoOfItems(cart);
@@ -22,20 +28,35 @@ const Footer = () => {
           <p className="font-bold text-sm md:text-lg">{noOfItems} items</p>
           <p className="font-bold text-sm md:text-lg">₹ {totalAmount}</p>
         </span>
-        <motion.span
-          className="flex items-center gap-2 p-1 px-2 mr-2 rounded cursor-pointer"
-          whileHover={{
-            scale: 1.1,
-            boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.4)",
+        <span
+          className={`flex items-center gap-2 p-1 px-2 mr-2 rounded ${
+            cart.length > 0 ? "cursor-pointer" : "cursor-not-allowed"
+          } `}
+          title={`${
+            cart.length === 0
+              ? "please add some items to the cart first"
+              : "Place order"
+          }`}
+          onClick={() => {
+            dispatch(placeOrder());
+            cart.length === 0 ? notifyToAddItemsInCart() : notifyOrderPlaced();
           }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.2 }}
         >
-          <p className="font-bold text-sm md:text-base">Place Order</p>
-          <span className="cursor-pointer rounded-full bg-slate-50 shadow-inner p-1">
-            <BsArrowRight className="font-semibold text-xl" />
+          <p
+            className={`font-bold text-sm md:text-base ${
+              cart.length === 0 && "text-gray-500"
+            } `}
+          >
+            Place Order
+          </p>
+          <span className="rounded-full bg-slate-50 shadow-inner p-1">
+            <BsArrowRight
+              className={`font-semibold text-xl ${
+                cart.length === 0 && "text-gray-500"
+              }`}
+            />
           </span>
-        </motion.span>
+        </span>
       </article>
     </footer>
   );
