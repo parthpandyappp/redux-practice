@@ -7,7 +7,7 @@ const Nav = () => {
       <section className="flex justify-between items-center ">
         <Link to="/">
           <article className="flex gap-2 items-center cursor-pointer">
-            <p className="h-6 w-6 bg-black rounded-full"></p>
+            <img src="/favicon.ico" className="w-8 h-8" alt="" />
             <p className="font-semibold text-lg">The Pie Spot</p>
           </article>
         </Link>
