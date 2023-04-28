@@ -1,5 +1,4 @@
-import axios from "axios";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     cart: [],
@@ -12,7 +11,6 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            console.log("ACTION: ", action.payload)
             state.cart = [...state.cart, action.payload]
         },
         incrementOrderQty: (state, action) => {

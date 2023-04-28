@@ -23,7 +23,7 @@ const Cart = () => {
       </section>
       {cart.length > 0 ? (
         <section className="mt-2 flex flex-col gap-4 shadow-inner bg-slate-50 rounded p-2">
-          {cart.map((dish) => {
+          {cart?.map((dish) => {
             return <CartItem dish={dish} />;
           })}
         </section>
