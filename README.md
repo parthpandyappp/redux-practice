@@ -1,5 +1,5 @@
 ### What's this all about?
-The project is a result of the frontend task assigned by the Toast app. It's a React app, designed pixel perfect in accordance with the given figma design viewable with ease in any mobile device.
+The project is a result of the frontend task assigned by the Treflo. It's a React app, designed pixel perfect viewable with ease in any mobile device.
 
 ### How it stands out?
 1. Highly scalable folder structure.
