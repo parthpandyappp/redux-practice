@@ -51,4 +51,10 @@ const notifyOrderPlaced = (pizza) => toast.custom((t) => (
     </span>
 ))
 
-export { notifyShowingVegOnly, notifyShowingNonVegOnly, notifyAddToCart, notifyOrderPlaced }
+const notifyToAddItemsInCart = () => toast.custom((t) => (
+    <span className="flex gap-1 items-center justify-around bg-slate-50 px-6 py-3 rounded-md border-2 border-red-300 shadow-xl">
+        <p className="text-gray-500 font-bold">Add an item in cart to place order</p>
+    </span>
+))
+
+export { notifyShowingVegOnly, notifyShowingNonVegOnly, notifyAddToCart, notifyOrderPlaced, notifyToAddItemsInCart }

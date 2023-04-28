@@ -1,7 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { BsArrowRight } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
-import { getNoOfItems, getTotalAmount, notifyOrderPlaced } from "../helpers";
+import {
+  getNoOfItems,
+  getTotalAmount,
+  notifyOrderPlaced,
+  notifyToAddItemsInCart,
+} from "../helpers";
 import { placeOrder } from "../features";
 
 const Footer = () => {
@@ -34,7 +39,7 @@ const Footer = () => {
           }`}
           onClick={() => {
             dispatch(placeOrder());
-            notifyOrderPlaced();
+            cart.length === 0 ? notifyToAddItemsInCart() : notifyOrderPlaced();
           }}
         >
           <p
