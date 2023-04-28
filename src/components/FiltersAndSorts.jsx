@@ -1,3 +1,5 @@
+import { notifyShowingVegOnly, notifyShowingNonVegOnly } from "../helpers/";
+
 const FiltersAndSorts = (props) => {
   const { setIsVeg, setSortByPrice, isVeg, setSortByRatings } = props;
   return (
@@ -9,7 +11,10 @@ const FiltersAndSorts = (props) => {
         <p className="text-gray-500 font-semibold">Veg</p>
         <span
           className="flex h-6 w-10 bg-gray-100 cursor-pointer rounded-2xl px-6 py-0.5 border items-center relative"
-          onClick={() => setIsVeg((prev) => !prev)}
+          onClick={() => {
+            setIsVeg((prev) => !prev);
+            !isVeg ? notifyShowingVegOnly() : notifyShowingNonVegOnly();
+          }}
         >
           <input
             type="button"
