@@ -5,7 +5,7 @@ import { CartItem } from "../components";
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
   return (
-    <main className="flex flex-col mt-24 h-full md:w-4/5 mx-auto mb-12">
+    <main className="flex flex-col mt-24 h-full md:w-4/5 w-full mx-auto mb-12">
       <section
         className={`group flex gap-2 items-center p-2 my-2 w-full cursor-pointer active:text-[#3CBCB4] mt-12`}
       >
