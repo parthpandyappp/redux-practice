@@ -44,7 +44,7 @@ const notifyAddToCart = (pizza) => toast.custom((t) => (
     </span>
 ))
 
-const notifyOrderPlaced = (pizza) => toast.custom((t) => (
+const notifyOrderPlaced = () => toast.custom((t) => (
     <span className="flex gap-1 items-center justify-around bg-slate-50 px-6 py-3 rounded-md border shadow-xl">
         <AiFillCheckCircle className="text-green-600 text-xl" />
         <p className="text-gray-500 font-bold">Your order has been placed</p>
