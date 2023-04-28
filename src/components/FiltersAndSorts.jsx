@@ -2,8 +2,10 @@ const FiltersAndSorts = (props) => {
   const { setIsVeg, setSortByPrice, isVeg, setSortByRatings } = props;
   return (
     <section className="md:w-1/4 h-full border mt-4 md:ml-2 p-4 rounded md:order-1 order-3">
-      <h3 className="font-bold text-lg">Filter and Sorts</h3>
-      <article className="flex items-center gap-2 mt-3 mb-3">
+      <h3 className="font-bold text-lg md:text-left text-center">
+        Filter and Sorts
+      </h3>
+      <article className="flex items-center gap-2 mt-3 mb-3 md:w-full w-1/2 mx-auto">
         <p className="text-gray-500 font-semibold">Veg</p>
         <span
           className="flex h-6 w-10 bg-gray-100 cursor-pointer rounded-2xl px-6 py-0.5 border items-center relative"
@@ -18,7 +20,7 @@ const FiltersAndSorts = (props) => {
         </span>
         <p className="text-gray-500 font-semibold">Non-veg</p>
       </article>
-      <article className="flex flex-col gap-1">
+      <article className="flex flex-col gap-1 md:justify-start md:w-full w-1/2 mx-auto">
         <p className="text-gray-500 font-bold text-lg">Sort by price</p>
         <span>
           <input
@@ -45,7 +47,7 @@ const FiltersAndSorts = (props) => {
           </label>
         </span>
       </article>
-      <article className="flex flex-col gap-1 mt-3">
+      <article className="flex flex-col gap-1 mt-3 w-1/2 md:w-full mx-auto">
         <p className="text-gray-500 font-bold text-lg">Sort by ratings</p>
         <span>
           <input
