@@ -24,7 +24,6 @@ const Popup = ({ size, toppings, name, togglePopup, productEssentials }) => {
     }
   };
 
-  //   console.log("Pizza details: ", pizzaSize, pizzaToppings);
 
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen bg-gray-300 bg-opacity-50 backdrop-blur-sm">

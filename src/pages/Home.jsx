@@ -23,7 +23,6 @@ const Home = () => {
     dispatch(getAllProducts());
   }, []);
 
-  console.log("Product status: ", products, productsLoading);
   return !productsLoading ? (
     <main className="flex flex-col md:flex-row mt-24 h-full md:w-4/5 mx-auto mb-12">
       <FiltersAndSorts

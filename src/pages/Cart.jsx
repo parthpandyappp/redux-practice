@@ -4,7 +4,6 @@ import { CartItem } from "../components";
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
-  console.log("CART: ", cart);
   return (
     <main className="flex flex-col mt-24 h-full md:w-4/5 mx-auto mb-12">
       <section
