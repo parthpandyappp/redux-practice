@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6e2b0516-1caf-4f05-a7a0-29bfc62e7021/deploy-status)](https://app.netlify.com/sites/thepiespot/deploys)
+
 ### What's this all about?
 The project is a result of the frontend task assigned by the Treflo. It's a React app, designed pixel perfect viewable with ease in any mobile device.
 
