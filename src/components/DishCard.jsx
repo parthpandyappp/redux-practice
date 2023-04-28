@@ -4,7 +4,7 @@ import { Rating } from "./Ratings";
 import { motion } from "framer-motion";
 import { alreadyAddedToCart, getQtyOfDishes } from "../helpers";
 import { useDispatch, useSelector } from "react-redux";
-import { decrementOrderQty } from "../features";
+import { decrementOrderQty, incrementOrderQty } from "../features";
 
 const DishCard = ({ dish }) => {
   const {
@@ -31,7 +31,7 @@ const DishCard = ({ dish }) => {
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
-        className="group active:opacity-25 flex flex-col border shadow-inner rounded-lg mx-auto bg-[#F6F6F6]"
+        className="group active:opacity-25 flex flex-col border shadow-inner rounded-lg mx-auto bg-[#F6F6F6] hover:shadow-2xl"
       >
         <img
           src={img_url}
@@ -67,7 +67,7 @@ const DishCard = ({ dish }) => {
               <p className="text-sm text-gray-500 font-semibold">{qty}</p>
               <p
                 className="flex items-center justify-center w-6 h-6 rounded-full shadow-inner text-[#3CBCB4] cursor-pointer"
-                onClick={() => setShowPopup(true)}
+                onClick={() => dispatch(incrementOrderQty(dish))}
               >
                 +
               </p>

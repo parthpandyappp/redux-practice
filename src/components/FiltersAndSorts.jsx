@@ -1,7 +1,7 @@
 const FiltersAndSorts = (props) => {
   const { setIsVeg, setSortByPrice, isVeg, setSortByRatings } = props;
   return (
-    <section className="md:w-1/4 h-full border mt-4 md:ml-2 p-2 rounded md:order-1 order-3">
+    <section className="md:w-1/4 h-full border mt-4 md:ml-2 p-4 rounded md:order-1 order-3">
       <h3 className="font-bold text-lg">Filter and Sorts</h3>
       <article className="flex items-center gap-2 mt-3 mb-3">
         <p className="text-gray-500 font-semibold">Veg</p>

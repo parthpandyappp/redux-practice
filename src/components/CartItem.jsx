@@ -29,7 +29,7 @@ const CartItem = ({ dish }) => {
         </span>
       </span>
       {alreadyAddedToCart(cart, dish) ? (
-        <span className="flex gap-2 justify-center items-center border w-24 rounded-xl p-1 bg-[#F0F0F3] shadow-md">
+        <span className="flex gap-2 justify-center items-center border w-18 md:w-24 rounded-xl p-0.5 md:p-1 bg-[#F0F0F3] shadow-md">
           <p
             className="flex items-center justify-center w-6 h-6 rounded-full shadow-inner text-[#3CBCB4] cursor-pointer"
             onClick={() => dispatch(decrementOrderQty(dish))}

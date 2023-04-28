@@ -27,8 +27,8 @@ const Popup = ({ size, toppings, name, togglePopup, productEssentials }) => {
   //   console.log("Pizza details: ", pizzaSize, pizzaToppings);
 
   return (
-    <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen bg-[#F0F0F3] bg-opacity-50">
-      <article className="min-h-2/5 w-4/5 md:min-h-1/3 md:w-1/3 m-auto bg-white rounded-md shadow-xl p-2">
+    <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen bg-gray-300 bg-opacity-50 backdrop-blur-sm">
+      <article className="min-h-2/5 w-4/5 md:min-h-1/3 md:w-1/3 m-auto bg-white rounded-md shadow-xl px-4 py-3">
         <section>
           <p className="text-gray-500 font-bold text-lg">
             Choose a size for your {name}
